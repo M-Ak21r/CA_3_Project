@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+        body {
+            background-image: url(Images/Background\ Image\ Books\ \(2\).jpg);
+        }
+        .outerDiv {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            bottom: 10px;
+            right: 10px;
+        }
+        h1 {
+            font-family:'Courier New', Courier, monospace;
+            font-size: 300%;
+            font-weight: normal;
+            color: white;
+        }
+        .signIn {
+            font-size: larger;
+            font-weight: 600;
+            color: white;
+        }
+        .Username, .Password, p {
+            font-size: large;
+            color: white;
+        }
+        input {
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            height: 20px;
+        }
+        .siteName {
+            margin-left: 50px;
+        }
+        .form {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .help {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+        fieldset {
+            border: 3px white dotted;
+            border-radius: 10px;
+        }
+        a:link {
+            color: red;
+        }
+        a:visited {
+            color: green;
+        }
+        a:hover {
+            color: yellow;
+        }
+        a:active {
+            color: white;
+        }
+        .submit {
+            padding: 6px 10px;
+            background-color: #fff;
+            color: #4a90e2;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit:hover {
+            background-color: #357ab8;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="outerDiv">
+        <div class="siteName">
+            <h1>Nerdy</h1>
+        </div>
+        <div class="form">
+            <form>
+                <fieldset>
+                    <legend class="signIn">Sign In</legend>
+                    <label class="Username">Username</label>
+                    <br>
+                    <input type="text">
+                    <br><br>
+                    <label for="" class="Password">Password</label>
+                    <br>
+                    <input type="password" name="" id="">
+                    <br><br>
+                    <center><button type="submit" class="submit">Submit</button></center>
+                </fieldset>
+            </form>
+            <p>Not a User? <a href="">Sign Up</a></p>
+        </div>
+        <div class="help">
+            <a href="">Need help?</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .title{
+            font-family:'Courier New', Courier, monospace;
+            font-size: 300%;
+            font-weight: normal;
+            color: white;
+            background-color: #4a90e2;
+            padding-left: 25px ;
+            margin: -5px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul a:hover {
+            background-color: #357ab8;
+            border-radius: 5px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 6px;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 6px 10px;
+            background-color: #fff;
+            color: #4a90e2;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #357ab8;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            margin-bottom: 15px;
+        }
+
+        .profile-section {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .profile-header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .profile-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .order-history, .settings {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .order-item, .settings-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-item:last-child, .settings-item:last-child {
+            border-bottom: none;
+        }
+
+        .order-item span, .settings-item span {
+            font-weight: bold;
+            color: #4a90e2;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Nerdy</h1>
+    <div class="navbar">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Library.html">Library</a></li>
+                    <li><a href="Shop.html">Shop</a></li>
+                    <li><a href="Profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="search-bar">
+            <input type="text" placeholder="Search books...">
+            <button>Search</button>
+        </div>
+    </div>
+
+    <main>
+        <h1>Profile</h1>
+
+        <section class="profile-section">
+            <div class="profile-header">
+                <img src="Images/profile_picture.webp" alt="Profile Picture">
+                <h2>John Doe</h2>
+            </div>
+            <p>Email: johndoe@example.com</p>
+            <p>Member since: January 2022</p>
+        </section>
+
+        <section class="profile-section">
+            <h2>Order History</h2>
+            <ul class="order-history">
+                <li class="order-item">
+                    <span>Order #12345:</span> Atomic Habits - $19.99 <br> Ordered on: 2024-09-15
+                </li>
+                <li class="order-item">
+                    <span>Order #12346:</span> Harry Potter and the Philosopher's Stone - $14.99 <br> Ordered on: 2024-09-20
+                </li>
+                <li class="order-item">
+                    <span>Order #12347:</span> Ikigai - $9.99 <br> Ordered on: 2024-10-05
+                </li>
+            </ul>
+        </section>
+
+        <section class="profile-section">
+            <h2>Settings</h2>
+            <ul class="settings">
+                <li class="settings-item">
+                    <span>Change Password</span>
+                </li>
+                <li class="settings-item">
+                    <span>Update Email</span>
+                </li>
+                <li class="settings-item">
+                    <span>Manage Subscriptions</span>
+                </li>
+                <li class="settings-item">
+                    <span>Delete Account</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

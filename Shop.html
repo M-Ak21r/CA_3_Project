@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .title{
+            font-family:'Courier New', Courier, monospace;
+            font-size: 300%;
+            font-weight: normal;
+            color: white;
+            background-color: #4a90e2;
+            padding-left: 25px ;
+            margin: -5px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul a:hover {
+            background-color: #357ab8;
+            border-radius: 5px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 6px;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 6px 10px;
+            background-color: #fff;
+            color: #4a90e2;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #357ab8;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            margin-bottom: 15px;
+        }
+
+        .book-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        figure {
+            text-align: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        figure:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            border-radius: 5px;
+        }
+
+        .price {
+            font-size: 1.1em;
+            color: #4a90e2;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Nerdy</h1>
+    <div class="navbar">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Library.html">Library</a></li>
+                    <li><a href="Shop.html">Shop</a></li>
+                    <li><a href="Profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="search-bar">
+            <input type="text" placeholder="Search books...">
+            <button>Search</button>
+        </div>
+    </div>
+
+    <main>
+        <h1>Shop</h1>
+
+        <section>
+            <h2>What's Trending</h2>
+            <div class="book-container">
+                <figure>
+                    <img src="Images/Atomic_Habits.jpg" alt="Atomic Habits Book" width="180px" height="275px">
+                    <figcaption>Atomic Habits <br> by <i>James Clear</i></figcaption>
+                    <div class="price">$19.99</div>
+                </figure>
+                <figure>
+                    <img src="Images/Harry_Potter_philosopher_stone.jpg" alt="Harry Potter Book" width="180px" height="275px">
+                    <figcaption>Harry Potter and the <br>Philosopher's Stone <br>by <i>J.K. Rowling</i></figcaption>
+                    <div class="price">$14.99</div>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2>Price Drops</h2>
+            <div class="book-container">
+                <figure>
+                    <img src="Images/Harry_Potter_Chamber_of_Secrets.jpg" alt="Harry Potter Book" width="180px" height="275px">
+                    <figcaption>Harry Potter and the<br> Chamber of Secrets <br>by<i> J.K. Rowling</i></figcaption>
+                    <div class="price">$12.99 <span style="text-decoration: line-through; color: #888;">$17.99</span></div>
+                </figure>
+                <figure>
+                    <img src="Images/Ikigai.jpg" alt="Ikigai Book" width="180px" height="275px">
+                    <figcaption>Ikigai <br>by <i>Hector Garcīa</i> and <br><i>Francesc Miralles</i></figcaption>
+                    <div class="price">$9.99 <span style="text-decoration: line-through; color: #888;">$14.99</span></div>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2>Best Sellers</h2>
+            <div class="book-container">
+                <figure>
+                    <img src="Images/Surrounded_By_Idiots.jpg" alt="Surrounded by Idiots Book" width="180px" height="275px">
+                    <figcaption>Surrounded by Idiots <br>by <i>Thomas Erikson</i></figcaption>
+                    <div class="price">$16.99</div>
+                </figure>
+                <figure>
+                    <img src="Images/Atomic_Habits.jpg" alt="Atomic Habits Book" width="180px" height="275px">
+                    <figcaption>Atomic Habits <br> by <i>James Clear</i></figcaption>
+                    <div class="price">$19.99</div>
+                </figure>
+                <figure>
+                    <img src="Images/Can't_Hurt_Me.jpg" alt="Can't Hurt Me Book" width="180px" height="275px">
+                    <figcaption>Can't Hurt Me <br><i>by David Goggins</i></figcaption>
+                    <div class="price">$18.99</div>
+                </figure>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
