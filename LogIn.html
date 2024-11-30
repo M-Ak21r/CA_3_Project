@@ -87,25 +87,44 @@
             <h1>Nerdy</h1>
         </div>
         <div class="form">
-            <form>
+            <form id="loginForm">
                 <fieldset>
                     <legend class="signIn">Sign In</legend>
                     <label class="Username">Username</label>
                     <br>
-                    <input type="text">
+                    <input type="text" id="username" required>
                     <br><br>
-                    <label for="" class="Password">Password</label>
+                    <label class="Password">Password</label>
                     <br>
-                    <input type="password" name="" id="">
+                    <input type="password" id="password" required>
                     <br><br>
                     <center><button type="submit" class="submit">Submit</button></center>
                 </fieldset>
             </form>
-            <p>Not a User? <a href="">Sign Up</a></p>
+            <p>Not a User? <a href="signup.html">Sign Up</a></p>
         </div>
         <div class="help">
-            <a href="">Need help?</a>
+            <a href="help.html">Need help?</a>
         </div>
     </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (username === "" || password === "") {
+                alert("Both Username and Password fields must be filled out!");
+                event.preventDefault(); 
+            } else {
+
+                const confirmation = confirm("Login successful! Taking you to the homepage.");
+                if (confirmation) {
+                    window.location.href = "home.html"; 
+                }
+                event.preventDefault(); 
+            }
+        });
+    </script>
 </body>
 </html>

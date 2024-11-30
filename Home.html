@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body Styling */
         .title {
             font-family: 'Courier New', Courier, monospace;
             font-size: 300%;
@@ -30,7 +28,6 @@
             line-height: 2;
         }
 
-        /* Navbar Styling */
         .navbar {
             background-color: #4a90e2;
             color: #fff;
@@ -58,7 +55,6 @@
             border-radius: 5px;
         }
 
-        /* Search Bar Styling */
         .search-bar {
             display: flex;
             align-items: center;
@@ -87,7 +83,6 @@
             color: #fff;
         }
 
-        /* Main Content Styling */
         main {
             padding: 20px;
         }
@@ -96,7 +91,7 @@
             margin-bottom: 15px;
         }
 
-        /* Book Container Styling */
+
         .book-container {
             display: flex;
             justify-content: flex-start;
@@ -104,7 +99,6 @@
             margin-bottom: 30px;
         }
 
-        /* Remove underline for links in book container */
         .book-container a {
             text-decoration: none;
             color: inherit;
@@ -132,7 +126,6 @@
 </head>
 <body>
     <h1 class="title">Nerdy</h1>
-    <!-- Navbar -->
     <div class="navbar">
         <header>
             <nav>
@@ -145,25 +138,24 @@
             </nav>
         </header>
         <div class="search-bar">
-            <input type="text" placeholder="Search books...">
-            <button>Search</button>
+            <input type="text" id="searchInput" placeholder="Search books...">
+            <button id="searchButton">Search</button>
         </div>
     </div>
 
-    <!-- Main Content -->
     <main>
         <h1>Home</h1>
 
         <section>
             <h2>Continue Reading</h2>
             <div class="book-container">
-                <a href="Atomichabits.html">
+                <a href="Atomichabits.html" class="book" data-title="Atomic Habits">
                     <figure>
                         <img src="Images/Atomic_Habits.jpg" alt="Atomic Habits Book" width="180px" height="275px">
                         <figcaption>Atomic Habits <br> by <i>James Clear</i></figcaption>
                     </figure>
                 </a>
-                <figure>
+                <figure class="book" data-title="Harry Potter and the Philosopher's Stone">
                     <img src="Images/Harry_Potter_philosopher_stone.jpg" alt="Harry Potter Book" width="180px" height="275px">
                     <figcaption>Harry Potter and the <br>Philosopher's Stone <br>by <i>J.K. Rowling</i></figcaption>
                 </figure>
@@ -173,15 +165,15 @@
         <section>
             <h2>Suggestions</h2>
             <div class="book-container">
-                <figure>
+                <figure class="book" data-title="Harry Potter and the Prisoner of Azkaban">
                     <img src="Images/Harry_Potter_Prisoner_of_Azkaban.jpg" alt="Harry Potter Book" width="180px" height="275px">
                     <figcaption>Harry Potter and the <br>Prisoner of Azkaban <br>by <i>J.K. Rowling</i></figcaption>
                 </figure>
-                <figure>
+                <figure class="book" data-title="Harry Potter and the Chamber of Secrets">
                     <img src="Images/Harry_Potter_Chamber_of_Secrets.jpg" alt="Harry Potter Book" width="180px" height="275px">
                     <figcaption>Harry Potter and the<br> Chamber of Secrets <br>by<i> J.K. Rowling</i></figcaption>
                 </figure>
-                <a href="Ikigai.html">
+                <a href="Ikigai.html" class="book" data-title="Ikigai">
                     <figure>
                         <img src="Images/Ikigai.jpg" alt="Ikigai Book" width="180px" height="275px">
                         <figcaption>Ikigai <br>by <i>Hector Garcīa</i> and <br><i>Francesc Miralles</i></figcaption>
@@ -193,20 +185,41 @@
         <section>
             <h2>Popular</h2>
             <div class="book-container">
-                <figure>
+                <figure class="book" data-title="Surrounded by Idiots">
                     <img src="Images/Surrounded_By_Idiots.jpg" alt="Surrounded by Idiots Book" width="180px" height="275px">
                     <figcaption>Surrounded by Idiots <br>by <i>Thomas Erikson</i></figcaption>
                 </figure>
-                <figure>
-                    <img src="Images/Atomic_Habits.jpg" alt="Atomic Habits Book" width="180px" height="275px">
-                    <figcaption>Atomic Habits <br> by <i>James Clear</i></figcaption>
-                </figure>
-                <figure>
+                <figure class="book" data-title="Can't Hurt Me">
                     <img src="Images/Can't_Hurt_Me.jpg" alt="Can't Hurt Me Book" width="180px" height="275px">
                     <figcaption>Can't Hurt Me <br><i>by David Goggins</i></figcaption>
                 </figure>
             </div>
         </section>
     </main>
+
+    <script>
+        const searchButton = document.getElementById("searchButton");
+        const searchInput = document.getElementById("searchInput");
+
+        searchButton.addEventListener("click", () => {
+            const query = searchInput.value.toLowerCase();
+            const books = document.querySelectorAll(".book");
+            let found = false;
+
+            books.forEach(book => {
+                const title = book.getAttribute("data-title").toLowerCase();
+                if (title.includes(query)) {
+                    book.style.display = "block";
+                    found = true;
+                } else {
+                    book.style.display = "none";
+                }
+            });
+
+            if (!found) {
+                alert("Book not found!");
+            }
+        });
+    </script>
 </body>
 </html>

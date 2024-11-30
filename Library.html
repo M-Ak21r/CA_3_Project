@@ -129,8 +129,8 @@
             </nav>
         </header>
         <div class="search-bar">
-            <input type="text" placeholder="Search books...">
-            <button>Search</button>
+            <input type="text" id="searchInput" placeholder="Search books...">
+            <button id="searchButton">Search</button>
         </div>
     </div>
 
@@ -140,36 +140,60 @@
         <section>
             <h2>Your Books</h2>
             <div class="book-container">
-                <figure>
+                <figure class="book" data-title="Atomic Habits">
                     <img src="Images/Atomic_Habits.jpg" alt="Atomic Habits Book" width="180px" height="275px">
                     <figcaption>Atomic Habits <br> by <i>James Clear</i></figcaption>
                 </figure>
-                <figure>
+                <figure class="book" data-title="Harry Potter and the Philosopher's Stone">
                     <img src="Images/Harry_Potter_philosopher_stone.jpg" alt="Harry Potter Book" width="180px" height="275px">
                     <figcaption>Harry Potter and the <br>Philosopher's Stone <br>by <i>J.K. Rowling</i></figcaption>
                 </figure>
-                <figure>
+                <figure class="book" data-title="Harry Potter and the Prisoner of Azkaban">
                     <img src="Images/Harry_Potter_Prisoner_of_Azkaban.jpg" alt="Harry Potter Book" width="180px" height="275px">
                     <figcaption>Harry Potter and the <br>Prisoner of Azkaban <br>by <i>J.K. Rowling</i></figcaption>
                 </figure>
-                <figure>
+                <figure class="book" data-title="Harry Potter and the Chamber of Secrets">
                     <img src="Images/Harry_Potter_Chamber_of_Secrets.jpg" alt="Harry Potter Book" width="180px" height="275px">
                     <figcaption>Harry Potter and the<br> Chamber of Secrets <br>by<i> J.K. Rowling</i></figcaption>
                 </figure>
-                <figure>
+                <figure class="book" data-title="Ikigai">
                     <img src="Images/Ikigai.jpg" alt="Ikigai Book" width="180px" height="275px">
                     <figcaption>Ikigai <br>by <i>Hector Garcīa</i> and <br><i>Francesc Miralles</i></figcaption>
                 </figure>
-                <figure>
+                <figure class="book" data-title="Surrounded by Idiots">
                     <img src="Images/Surrounded_By_Idiots.jpg" alt="Surrounded by Idiots Book" width="180px" height="275px">
                     <figcaption>Surrounded by Idiots <br>by <i>Thomas Erikson</i></figcaption>
                 </figure>
-                <figure>
+                <figure class="book" data-title="Can't Hurt Me">
                     <img src="Images/Can't_Hurt_Me.jpg" alt="Can't Hurt Me Book" width="180px" height="275px">
                     <figcaption>Can't Hurt Me <br><i>by David Goggins</i></figcaption>
                 </figure>
             </div>
         </section>
     </main>
+    <script>
+        const searchButton = document.getElementById("searchButton");
+        const searchInput = document.getElementById("searchInput");
+
+        searchButton.addEventListener("click", () => {
+            const query = searchInput.value.toLowerCase();
+            const books = document.querySelectorAll(".book");
+            let found = false;
+
+            books.forEach(book => {
+                const title = book.getAttribute("data-title").toLowerCase();
+                if (title.includes(query)) {
+                    book.style.display = "block";
+                    found = true;
+                } else {
+                    book.style.display = "none";
+                }
+            });
+
+            if (!found) {
+                alert("Book not found!");
+            }
+        });
+    </script>
 </body>
 </html>

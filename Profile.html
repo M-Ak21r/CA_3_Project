@@ -150,8 +150,8 @@
             </nav>
         </header>
         <div class="search-bar">
-            <input type="text" placeholder="Search books...">
-            <button>Search</button>
+            <input type="text" id="searchInput" placeholder="Search books...">
+            <button id="searchButton">Search</button>
         </div>
     </div>
 
@@ -200,5 +200,29 @@
             </ul>
         </section>
     </main>
+    <script>
+        const searchButton = document.getElementById("searchButton");
+        const searchInput = document.getElementById("searchInput");
+
+        searchButton.addEventListener("click", () => {
+            const query = searchInput.value.toLowerCase();
+            const books = document.querySelectorAll(".book");
+            let found = false;
+
+            books.forEach(book => {
+                const title = book.getAttribute("data-title").toLowerCase();
+                if (title.includes(query)) {
+                    book.style.display = "block";
+                    found = true;
+                } else {
+                    book.style.display = "none";
+                }
+            });
+
+            if (!found) {
+                alert("Book not found!");
+            }
+        });
+    </script>
 </body>
 </html>
